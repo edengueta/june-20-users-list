@@ -3,21 +3,26 @@ class PostsList {
         this.init();
         this.element = document.createElement('ul');
         this.element.classList.add('posts-list');
+
+        selectedUserService.onUserChanged(() => this.init());
     }
 
     async init() {
+        this.element.innerHTML = '';
         this.posts = await this.fetchPosts();
         this.createList();
     }
 
     async fetchPosts(){
-        let response = await fetch('https://jsonplaceholder.typicode.com/users/8/posts');
+        let user = selectedUserService.user;
+        let response = await fetch('https://jsonplaceholder.typicode.com/users/' + user.id +'/posts');
         return response.json();
     }
 
     createList() {
         this.posts.forEach(post => {
-            this.element.appendChild(this.createPost(post))
+            let li = this.createPost(post);
+            this.element.appendChild(li)
         });
     }
 

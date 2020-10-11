@@ -17,14 +17,20 @@ class UsersList {
 
     createList() {
         for (let user of this.users) {
-            let li = document.createElement('li');
-            li.innerHTML = this.createUser(user);
+            let li = this.createUser(user);
             this.listElement.appendChild(li);
         }
     }
 
+    onUserSelected(user) {
+        selectedUserService.setSelectedUser(user);
+    }
+
     createUser(userData) {
+        let li = document.createElement('li');
+        li.addEventListener('click', () => this.onUserSelected(userData));
         let user = new User(userData);
-        return user.html;
+        li.innerHTML = user.html;
+        return li;
     }
 }
