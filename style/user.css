@@ -1,0 +1,13 @@
+div.user {
+    background: white;
+    border: 2px dashed springgreen;
+    padding: 15px;
+}
+
+div.user dt {
+    font-weight: bold;
+}
+
+div.user dd {
+    margin: 0;
+}
