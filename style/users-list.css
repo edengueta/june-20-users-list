@@ -1,6 +1,6 @@
 ul.users-list {
-    padding: 20px 10px;
-    max-width: 200px;
+    margin: 0;
+    padding: 10px 20px;
 }
 
 ul.users-list li {

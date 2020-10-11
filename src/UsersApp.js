@@ -2,20 +2,19 @@ class UsersApp {
     constructor() {
         this.element = document.createElement('main');
         this.element.classList.add('main-app');
-        this.createList();
+        this.createUsers();
         this.createPosts();
-    }
 
-    createList() {
-        let usersList = new UsersList();
-        this.element.appendChild(usersList.listElement);
         document.body.appendChild(this.element);
     }
 
+    createUsers() {
+        let usersList = new UsersList();
+        this.element.appendChild(usersList.listElement);
+    }
+
     createPosts() {
-        let postsElement = document.createElement('article');
-        postsElement.innerHTML = "hello world";
-        postsElement.classList.add('posts-list');
-        this.element.appendChild(postsElement);
+        let postsList = new PostsList();
+        this.element.appendChild(postsList.element);
     }
 }
