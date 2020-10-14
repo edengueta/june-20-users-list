@@ -13,9 +13,9 @@ class PostsList {
         this.createList();
     }
 
-    async fetchPosts(){
+    async fetchPosts() {
         let user = selectedUserService.user;
-        let response = await fetch('https://jsonplaceholder.typicode.com/users/' + user.id +'/posts');
+        let response = await fetch(`${serverURL}/users/${user.id}/posts`);
         return response.json();
     }
 

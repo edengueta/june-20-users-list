@@ -10,8 +10,8 @@ class UsersList {
         this.createList();
     }
 
-    async fetchUsers(){ 
-        let response = await fetch('https://jsonplaceholder.typicode.com/users/');
+    async fetchUsers() {
+        let response = await fetch(`${serverURL}/users/`);
         return await response.json();
     }
 
