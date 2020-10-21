@@ -1,9 +1,8 @@
 class PostsList {
     constructor() {
-        this.init();
+
         this.element = document.createElement('ul');
         this.element.classList.add('posts-list');
-
         selectedUserService.onUserChanged(() => this.init());
     }
 
@@ -24,6 +23,10 @@ class PostsList {
             let li = this.createPost(post);
             this.element.appendChild(li)
         });
+    }
+
+    onPostSelected(post) {
+        selectedPostService.setSelectedPost(post);
     }
 
     createPost(postData) {

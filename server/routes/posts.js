@@ -9,10 +9,18 @@ router.get('/', (req, res) => {
     res.send(posts);
 });
 
-router.get('/:id', (req, res) => {
-    const postId = parseInt(req.params.id);
-    res.send(posts.find(post => post.id === postId));
-});
+router.route("/:id")
+    .get((req, res) => {
+        const postId = parseInt(req.params.id);
+        res.send(posts.find(post => post.id === postId));
+    })
+    .delete((req, res) => {
+        const postId = parseInt(req.params.id);
+        const index = posts.findIndex(post => post.id === postId);
+        posts.splice(index, 1);
+        fs.writeFileSync("../db/posts.json", JSON.stringify(posts));
+        res.send(posts);
+    });
 
 router.get('/:id/comments', (req, res) => {
     const postId = parseInt(req.params.id);

@@ -1,0 +1,8 @@
+section.post {
+    background: #ececec;
+    border: 1px solid #cfcfcf;
+    padding: 15px;
+    color: rgb(4, 0, 56);
+    width: 300px;
+    margin: 10px 0;
+}

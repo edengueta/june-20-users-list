@@ -1,0 +1,10 @@
+ul.posts-list {
+    margin: 0;
+    padding: 0 20px 10px 20px;
+    list-style: none;
+}
+
+ul.posts-list li {
+    list-style: none;
+    margin-bottom: 20px;
+}

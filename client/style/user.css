@@ -1,7 +1,8 @@
 div.user {
     background: white;
-    border: 2px solid #FC9D9A;
+    border: 1px solid #ececec;
     padding: 15px;
+    color: rgb(4, 0, 56);
 }
 
 div.user h2 {
@@ -10,12 +11,11 @@ div.user h2 {
 
 div.user h2,
 div.user strong {
-    color: #FE4365
+    font-weight: bold;
 }
 
 div.user dt {
-    font-weight: bold;
-    color: #FC9D9A
+    color: rgb(172, 172, 179);
 }
 
 div.user dd {
