@@ -29,6 +29,7 @@ class CommentsList {
     createComments(commentData) {
         let comment = new Comment(commentData);
         let li = document.createElement('li');
+        li.addEventListener('click', () => this.onPostSelected(postData));
         li.innerHTML = comment.html;
         return li;
     }
